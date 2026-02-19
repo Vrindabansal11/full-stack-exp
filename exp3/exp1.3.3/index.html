@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Class Hierarchy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="container">
+        <h1>Person Class Hierarchy</h1>
+
+        <div class="form-box">
+            <select id="type">
+                <option value="Person">Person</option>
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+
+            <input type="text" id="name" placeholder="Enter Name">
+            <input type="number" id="age" placeholder="Enter Age">
+            <input type="text" id="extra" placeholder="Major / Subject">
+
+            <button onclick="addPerson()">Add</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
