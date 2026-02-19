@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Message Box</title>
 
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0a0f1f, #0c1630, #0a1a2f);
+    }
+
+    .container {
+        position: relative;
+        width: 500px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 160px;
+        padding: 25px;
+        font-size: 28px;
+        color: #e6e6e6;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        outline: none;
+        resize: none;
+        backdrop-filter: blur(6px);
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .counter {
+        position: absolute;
+        bottom: 12px;
+        right: 18px;
+        font-size: 22px;
+        color: #ffffff;
+        opacity: 0.9;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <textarea id="msg" maxlength="150" placeholder="Type your message..."></textarea>
+    <div class="counter" id="count">0/150</div>
+</div>
+
+<script>
+    const textarea = document.getElementById("msg");
+    const counter = document.getElementById("count");
+
+    textarea.addEventListener("input", () => {
+        // spaces, enter, symbols — ALL counted
+        let length = textarea.value.length;
+        counter.textContent = `${length}/150`;
+    });
+</script>
+
+</body>
+</html>
