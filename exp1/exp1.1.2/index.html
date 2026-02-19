@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Banking UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <main class="bank-app">
+    <h2>My Bank</h2>
+
+    <section class="balance-card">
+      <span>Current Balance</span>
+      <h1 id="balance">₹ 0</h1>
+    </section>
+
+    <section class="controls">
+      <input type="number" id="amount" placeholder="Enter amount" />
+      <div class="buttons">
+        <button id="deposit">Deposit</button>
+        <button id="withdraw">Withdraw</button>
+      </div>
+      <p id="message"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
