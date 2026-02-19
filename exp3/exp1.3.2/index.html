@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <div class="container">
+    <h1>Library Management System</h1>
+
+    <input type="text" id="searchInput" placeholder="Search books...">
+
+    <div class="add-book">
+      <input type="text" id="titleInput" placeholder="Book Title">
+      <input type="text" id="authorInput" placeholder="Author">
+      <input type="text" id="categoryInput" placeholder="Category (Anime, Ben 10, Cartoon)">
+      <button onclick="addBook()">Add Book</button>
+    </div>
+
+    <div id="bookList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
