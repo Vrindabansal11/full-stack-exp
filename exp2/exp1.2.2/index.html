@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Filter</title>
 
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px;
+        background: #ffffff;
+        color: #000;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .filter-box {
+        margin-bottom: 30px;
+    }
+
+    select {
+        padding: 8px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(2, 220px);
+        gap: 25px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        transition: 0.2s;
+    }
+
+    .card:hover {
+        box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .electronics {
+        background: #2563eb;
+    }
+
+    .clothing {
+        background: #60a5fa;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Product Filter</h1>
+
+<div class="filter-box">
+    <label>Filter by: </label>
+    <select id="filter">
+        <option value="all">All Products</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+    </select>
+</div>
+
+<div class="products">
+    <div class="card" data-category="electronics">
+        <div class="title">Wireless Headphones</div>
+        <div class="price">$129.99</div>
+        <span class="tag electronics">electronics</span>
+    </div>
+
+    <div class="card" data-category="clothing">
+        <div class="title">Cotton T-Shirt</div>
+        <div class="price">$24.99</div>
+        <span class="tag clothing">clothing</span>
+    </div>
+
+    <div class="card" data-category="electronics">
+        <div class="title">Bluetooth Speaker</div>
+        <div class="price">$89.99</div>
+        <span class="tag electronics">electronics</span>
+    </div>
+
+    <div class="card" data-category="clothing">
+        <div class="title">Denim Jeans</div>
+        <div class="price">$59.99</div>
+        <span class="tag clothing">clothing</span>
+    </div>
+</div>
+
+<script>
+    const filter = document.getElementById("filter");
+    const cards = document.querySelectorAll(".card");
+
+    filter.addEventListener("change", () => {
+        const value = filter.value;
+
+        cards.forEach(card => {
+            const category = card.getAttribute("data-category");
+
+            if (value === "all" || category === value) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
